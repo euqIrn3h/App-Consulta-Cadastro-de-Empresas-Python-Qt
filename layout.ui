@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Cadastro-Consulta</string>
   </property>
   <property name="styleSheet">
    <string notr="true">*{
@@ -23,6 +23,11 @@ border:none;
 
 QPushButton{
 background-color:rgb(150,150,150);
+color:rgb(0,0,0)
+}
+
+QPushButton:hover{
+background-color:rgb(255,255,255);
 color:rgb(0,0,0)
 }
 
@@ -77,11 +82,20 @@ border-color: white;</string>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
            <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">border: none</string>
             </property>
             <property name="text">
-             <string>TextLabel</string>
+             <string>scc</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -130,28 +144,28 @@ border-color: white;</string>
              </attribute>
              <layout class="QVBoxLayout" name="verticalLayout_4">
               <item>
-               <widget class="QPushButton" name="btnHome">
+               <widget class="QPushButton" name="pbhome">
                 <property name="text">
                  <string>Home</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="btnCadastrar">
+               <widget class="QPushButton" name="pbcadastrar">
                 <property name="text">
                  <string>Cadastrar</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="btnContatos">
+               <widget class="QPushButton" name="pbcontatos">
                 <property name="text">
                  <string>Contatos</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="btnSobre">
+               <widget class="QPushButton" name="pbsobre">
                 <property name="text">
                  <string>Sobre</string>
                 </property>
@@ -221,9 +235,7 @@ Autor : HenrIque</string>
        <item>
         <widget class="QFrame" name="TopFrame">
          <property name="styleSheet">
-          <string notr="true">border: 1px;
-border-style:solid;
-border-color: white;</string>
+          <string notr="true"/>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -232,24 +244,44 @@ border-color: white;</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QPushButton" name="pushButton">
+          <item alignment="Qt::AlignLeft">
+           <widget class="QPushButton" name="pbtopo">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>30</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="styleSheet">
-             <string notr="true">border:none
-</string>
+             <string notr="true">background-color: rgb(211, 211, 211);</string>
             </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">border:none</string>
             </property>
             <property name="text">
-             <string>TextLabel</string>
+             <string>SISTEMA DE CADASTRO E CONSULTA</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -288,14 +320,14 @@ border-color: white;</string>
              <string notr="true">border:none</string>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="Home">
              <layout class="QVBoxLayout" name="verticalLayout_8">
               <item>
                <widget class="QLabel" name="logo">
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Icones/icone.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/icon/icon.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                </widget>
               </item>
@@ -425,21 +457,21 @@ border-color: white;</string>
                        </property>
                        <layout class="QVBoxLayout" name="verticalLayout_10">
                         <item>
-                         <widget class="QPushButton" name="btnExcel">
+                         <widget class="QPushButton" name="pbgerarexcel">
                           <property name="text">
                            <string>Gerar Excel</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QPushButton" name="btnAlterar">
+                         <widget class="QPushButton" name="pbalterar">
                           <property name="text">
                            <string>Alterar</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QPushButton" name="btnExcluir">
+                         <widget class="QPushButton" name="pbexcluir">
                           <property name="text">
                            <string>Excluir</string>
                           </property>
@@ -568,7 +600,7 @@ border-color: white;</string>
                    </widget>
                   </item>
                   <item row="6" column="1" colspan="2">
-                   <widget class="QPushButton" name="pushButton_2">
+                   <widget class="QPushButton" name="pbenviar">
                     <property name="text">
                      <string>Enviar</string>
                     </property>
@@ -591,10 +623,10 @@ border-color: white;</string>
                  </font>
                 </property>
                 <property name="text">
-                 <string>Telefone</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon/telefone.png&quot;/&gt; Telefone&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
@@ -607,10 +639,10 @@ border-color: white;</string>
                  </font>
                 </property>
                 <property name="text">
-                 <string>Instagram</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon/instagram.png&quot;/&gt; Instagram&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
@@ -623,10 +655,10 @@ border-color: white;</string>
                  </font>
                 </property>
                 <property name="text">
-                 <string>Email</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon/email.png&quot;/&gt;Email&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
@@ -666,7 +698,7 @@ border-color: white;</string>
           <item>
            <widget class="QLabel" name="label_2">
             <property name="text">
-             <string>(C) AgaDev - 2021</string>
+             <string>(C) Henrique - 2021</string>
             </property>
            </widget>
           </item>
@@ -680,7 +712,7 @@ border-color: white;</string>
   </widget>
  </widget>
  <resources>
-  <include location="../Curso/icones.qrc"/>
+  <include location="png.qrc"/>
  </resources>
  <connections/>
 </ui>
