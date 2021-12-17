@@ -1,3 +1,4 @@
+from typing import Text
 from PySide6 import QtCore
 from PySide6.QtCore import QCoreApplication
 from PySide6.QtWidgets import *
@@ -5,6 +6,7 @@ from layout import Ui_MainWindow
 from PySide6.QtGui import QIcon
 import sys
 from api import consulta
+from database import manutencao
 
 
 class mw(QMainWindow,Ui_MainWindow):
@@ -27,7 +29,8 @@ class mw(QMainWindow,Ui_MainWindow):
         #Dados da empresa preenchido automaticamente
         self.lecnpj.editingFinished.connect(self.consultaApi)
 
-
+        #Cadastrar a empresa no nosso banco de dados
+        self.pbenviar.clicked.connect(self.cadastrarEmpresa)
 
     def leftMenu(self):
         x = self.LContainer.width()
@@ -47,23 +50,63 @@ class mw(QMainWindow,Ui_MainWindow):
     def consultaApi(self):
         column = consulta(self.lecnpj.text().replace('/','').replace('.','').replace('-','').replace(" ",''))
 
-        self.lenome.setText(column[0])
-        self.lelogradouro.setText(column[1])
-        self.lenumero.setText(column[2])
-        self.lecomplemento.setText(column[3])
-        self.lebairro.setText(column[4])
-        self.lemunicipio.setText(column[5])
-        self.leuf.setText(column[6])                   
-        self.lecep.setText(column[7].replace('.','').replace('-',''))    #replace para substituir os pontos e traços por uma string vazia para nao ter problema no sql
-        self.letelefone.setText(column[8].replace('(','').replace(')','').replace('-',''))
-        self.leemail.setText(column[9])
+        if column=='erro':
+            pass
+        else:
+            self.lenome.setText(column[0].replace('-','').replace('/',''))
+            self.lelogradouro.setText(column[1])
+            self.lenumero.setText(column[2])
+            self.lecomplemento.setText(column[3])
+            self.lebairro.setText(column[4])
+            self.lemunicipio.setText(column[5])
+            self.leuf.setText(column[6])                   
+            self.lecep.setText(column[7].replace('.','').replace('-',''))    #replace para substituir os pontos e traços por uma string vazia para nao ter problema no sql
+            self.letelefone.setText(column[8].replace('(','').replace(')','').replace('-','').replace('/',''))
+            self.leemail.setText(column[9])
 
+    def cadastrarEmpresa(self):
+        db = manutencao()
+        db.connect()
+
+        fullDataSet = (
+            self.lecnpj.text(),
+            self.lenome.text(),
+            self.lelogradouro.text(),
+            self.lenumero.text(),
+            self.lecomplemento.text(),
+            self.lebairro.text(),
+            self.lemunicipio.text(),            
+            self.leuf.text(),                   
+            self.lecep.text(),    
+            self.letelefone.text(),
+            self.leemail.text(),
+        )
+
+        #Cadastrar no banco de dados
+        resposta = db.cadastrar(fullDataSet)
+
+        if resposta=='erro':
+            msg = QMessageBox()
+            msg.setWindowTitle("Erro")
+            msg.setText("Empresa nao foi cadastrada!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setWindowTitle("Cadastrado")
+            msg.setText("Empresa cadastrada com SUCESSO!")
+            msg.exec()
+            db.close()
 
 
 
 
 
 if __name__ == "__main__":
+    db = manutencao()
+    db.connect()
+    db.ctable()
+    db.close()
+
     app = QApplication(sys.argv)
     window = mw()
     window.show()

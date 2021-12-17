@@ -1,7 +1,7 @@
 import sqlite3
 from sqlite3.dbapi2 import Cursor
 
-class db():
+class manutencao():
     def __init__(self, name='system.db') -> None:
         self.name = name
         
@@ -15,7 +15,7 @@ class db():
             print("Nao foi possivel desconectar")
     def ctable(self):
         cursor = self.connection.cursor()
-        cursor.execute(f"""CREATE TABLE IF NOT EXIST empresa(
+        cursor.execute(f"""CREATE TABLE IF NOT EXISTS Empresa(
                 CNPJ TEXT,
                 NOME TEXT,
                 LOGRADOURO TEXT,
@@ -32,21 +32,21 @@ class db():
         )
 
     def cadastrar(self,fullDataSet):
-        colunas=('CNPJ','NOME','LOGRADOURO','BAIRRO','NUMERO','COMPLEMENTO','MUNICIPIO','UF','CEP','TELEFONE','EMAIL')
+        colunas=('CNPJ','NOME','LOGRADOURO','NUMERO','COMPLEMENTO','BAIRRO','MUNICIPIO','UF','CEP','TELEFONE','EMAIL')
         quantidade=("?,?,?,?,?,?,?,?,?,?,?")
 
         cursor= self.connection.cursor()
 
         try:
-            cursor.execute(f"""INSERT INTO Empresas {colunas} VALUES({quantidade})""",fullDataSet)
-            return "OK"
+            cursor.execute(f"""INSERT INTO Empresa {colunas} VALUES({quantidade})""",fullDataSet)
+            self.connection.commit()
         except:
-            return "Erro"
+            return "erro"
 
     def tabela(self):
         try:
             cursor = self.connection.cursor()
-            cursor.execute("SELECT * FROM Empresas ORDER BY NOME")
+            cursor.execute("SELECT * FROM Empresa ORDER BY NOME")
             empresas= cursor.fetchall()
             return empresas
         except:
@@ -55,7 +55,7 @@ class db():
     def excluir(self):
         try:
             cursor = self.connection.cursor()
-            cursor.execute("DELETE FROM Empresas WHERE CNPJ == '{id}'")
+            cursor.execute("DELETE FROM Empresa WHERE CNPJ == '{id}'")
             self.connection.commit()
             return "Excluida com sucesso"
         except:
@@ -63,7 +63,7 @@ class db():
     
     def alterar(self,fullDataSet):
         cursor = self.connection.cursor()
-        cursor.execute(f"""UPDATE Empresas set 
+        cursor.execute(f"""UPDATE Empresa set 
                 CNPJ = '{fullDataSet[0]}',
                 NOME = '{fullDataSet[1]}',
                 LOGRADOURO = '{fullDataSet[2]}',
