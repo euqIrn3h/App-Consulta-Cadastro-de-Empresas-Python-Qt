@@ -344,60 +344,60 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.label_6, 0, 0, 1, 4)
 
-        self.lineEdit = QLineEdit(self.tab_2)
-        self.lineEdit.setObjectName(u"lineEdit")
+        self.lecnpj = QLineEdit(self.tab_2)
+        self.lecnpj.setObjectName(u"lecnpj")
 
-        self.gridLayout.addWidget(self.lineEdit, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.lecnpj, 1, 0, 1, 1)
 
-        self.lineEdit_3 = QLineEdit(self.tab_2)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.lelogradouro = QLineEdit(self.tab_2)
+        self.lelogradouro.setObjectName(u"lelogradouro")
 
-        self.gridLayout.addWidget(self.lineEdit_3, 2, 0, 1, 4)
+        self.gridLayout.addWidget(self.lelogradouro, 2, 0, 1, 4)
 
-        self.lineEdit_4 = QLineEdit(self.tab_2)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.lenumero = QLineEdit(self.tab_2)
+        self.lenumero.setObjectName(u"lenumero")
 
-        self.gridLayout.addWidget(self.lineEdit_4, 3, 0, 1, 1)
+        self.gridLayout.addWidget(self.lenumero, 3, 0, 1, 1)
 
-        self.lineEdit_5 = QLineEdit(self.tab_2)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
+        self.lecomplemento = QLineEdit(self.tab_2)
+        self.lecomplemento.setObjectName(u"lecomplemento")
 
-        self.gridLayout.addWidget(self.lineEdit_5, 3, 1, 1, 2)
+        self.gridLayout.addWidget(self.lecomplemento, 3, 1, 1, 2)
 
-        self.lineEdit_6 = QLineEdit(self.tab_2)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
+        self.lebairro = QLineEdit(self.tab_2)
+        self.lebairro.setObjectName(u"lebairro")
 
-        self.gridLayout.addWidget(self.lineEdit_6, 3, 3, 1, 1)
+        self.gridLayout.addWidget(self.lebairro, 3, 3, 1, 1)
 
-        self.lineEdit_7 = QLineEdit(self.tab_2)
-        self.lineEdit_7.setObjectName(u"lineEdit_7")
+        self.lemunicipio = QLineEdit(self.tab_2)
+        self.lemunicipio.setObjectName(u"lemunicipio")
 
-        self.gridLayout.addWidget(self.lineEdit_7, 4, 0, 1, 1)
+        self.gridLayout.addWidget(self.lemunicipio, 4, 0, 1, 1)
 
-        self.lineEdit_8 = QLineEdit(self.tab_2)
-        self.lineEdit_8.setObjectName(u"lineEdit_8")
+        self.leuf = QLineEdit(self.tab_2)
+        self.leuf.setObjectName(u"leuf")
 
-        self.gridLayout.addWidget(self.lineEdit_8, 4, 1, 1, 2)
+        self.gridLayout.addWidget(self.leuf, 4, 1, 1, 2)
 
-        self.lineEdit_9 = QLineEdit(self.tab_2)
-        self.lineEdit_9.setObjectName(u"lineEdit_9")
+        self.lecep = QLineEdit(self.tab_2)
+        self.lecep.setObjectName(u"lecep")
 
-        self.gridLayout.addWidget(self.lineEdit_9, 4, 3, 1, 1)
+        self.gridLayout.addWidget(self.lecep, 4, 3, 1, 1)
 
-        self.lineEdit_10 = QLineEdit(self.tab_2)
-        self.lineEdit_10.setObjectName(u"lineEdit_10")
+        self.letelefone = QLineEdit(self.tab_2)
+        self.letelefone.setObjectName(u"letelefone")
 
-        self.gridLayout.addWidget(self.lineEdit_10, 5, 0, 1, 2)
+        self.gridLayout.addWidget(self.letelefone, 5, 0, 1, 2)
 
-        self.lineEdit_11 = QLineEdit(self.tab_2)
-        self.lineEdit_11.setObjectName(u"lineEdit_11")
+        self.leemail = QLineEdit(self.tab_2)
+        self.leemail.setObjectName(u"leemail")
 
-        self.gridLayout.addWidget(self.lineEdit_11, 5, 2, 1, 2)
+        self.gridLayout.addWidget(self.leemail, 5, 2, 1, 2)
 
-        self.lineEdit_2 = QLineEdit(self.tab_2)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lenome = QLineEdit(self.tab_2)
+        self.lenome.setObjectName(u"lenome")
 
-        self.gridLayout.addWidget(self.lineEdit_2, 1, 1, 1, 3)
+        self.gridLayout.addWidget(self.lenome, 1, 1, 1, 3)
 
         self.pbenviar = QPushButton(self.tab_2)
         self.pbenviar.setObjectName(u"pbenviar")
@@ -475,7 +475,7 @@ class Ui_MainWindow(object):
 
         self.toolBox.setCurrentIndex(0)
         self.Pages.setCurrentIndex(1)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -519,17 +519,17 @@ class Ui_MainWindow(object):
         self.pbexcluir.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Empresas", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Empresa", None))
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CNPJ", None))
-        self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"LOGRADOURO", None))
-        self.lineEdit_4.setPlaceholderText(QCoreApplication.translate("MainWindow", u"N\u00daMERO", None))
-        self.lineEdit_5.setPlaceholderText(QCoreApplication.translate("MainWindow", u"COMPLEMENTO", None))
-        self.lineEdit_6.setPlaceholderText(QCoreApplication.translate("MainWindow", u"BAIRRO", None))
-        self.lineEdit_7.setPlaceholderText(QCoreApplication.translate("MainWindow", u"MUNIC\u00cdPIO", None))
-        self.lineEdit_8.setPlaceholderText(QCoreApplication.translate("MainWindow", u"UF", None))
-        self.lineEdit_9.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CEP", None))
-        self.lineEdit_10.setPlaceholderText(QCoreApplication.translate("MainWindow", u"TELEFONE", None))
-        self.lineEdit_11.setPlaceholderText(QCoreApplication.translate("MainWindow", u"EMAIL", None))
-        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"NOME EMPRESARIAL", None))
+        self.lecnpj.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CNPJ", None))
+        self.lelogradouro.setPlaceholderText(QCoreApplication.translate("MainWindow", u"LOGRADOURO", None))
+        self.lenumero.setPlaceholderText(QCoreApplication.translate("MainWindow", u"N\u00daMERO", None))
+        self.lecomplemento.setPlaceholderText(QCoreApplication.translate("MainWindow", u"COMPLEMENTO", None))
+        self.lebairro.setPlaceholderText(QCoreApplication.translate("MainWindow", u"BAIRRO", None))
+        self.lemunicipio.setPlaceholderText(QCoreApplication.translate("MainWindow", u"MUNIC\u00cdPIO", None))
+        self.leuf.setPlaceholderText(QCoreApplication.translate("MainWindow", u"UF", None))
+        self.lecep.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CEP", None))
+        self.letelefone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"TELEFONE", None))
+        self.leemail.setPlaceholderText(QCoreApplication.translate("MainWindow", u"EMAIL", None))
+        self.lenome.setPlaceholderText(QCoreApplication.translate("MainWindow", u"NOME EMPRESARIAL", None))
         self.pbenviar.setText(QCoreApplication.translate("MainWindow", u"Enviar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Cadastrar", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icon/telefone.png\"/>Telefone</p></body></html>", None))

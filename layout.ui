@@ -358,7 +358,7 @@ border-color: white;</string>
              <string notr="true">border:none</string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="Home">
              <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -386,7 +386,7 @@ border-color: white;</string>
 </string>
                 </property>
                 <property name="currentIndex">
-                 <number>0</number>
+                 <number>1</number>
                 </property>
                 <widget class="QWidget" name="tab">
                  <attribute name="title">
@@ -561,77 +561,77 @@ border-color: white;</string>
                    </widget>
                   </item>
                   <item row="1" column="0">
-                   <widget class="QLineEdit" name="lineEdit">
+                   <widget class="QLineEdit" name="lecnpj">
                     <property name="placeholderText">
                      <string>CNPJ</string>
                     </property>
                    </widget>
                   </item>
                   <item row="2" column="0" colspan="4">
-                   <widget class="QLineEdit" name="lineEdit_3">
+                   <widget class="QLineEdit" name="lelogradouro">
                     <property name="placeholderText">
                      <string>LOGRADOURO</string>
                     </property>
                    </widget>
                   </item>
                   <item row="3" column="0">
-                   <widget class="QLineEdit" name="lineEdit_4">
+                   <widget class="QLineEdit" name="lenumero">
                     <property name="placeholderText">
                      <string>NÚMERO</string>
                     </property>
                    </widget>
                   </item>
                   <item row="3" column="1" colspan="2">
-                   <widget class="QLineEdit" name="lineEdit_5">
+                   <widget class="QLineEdit" name="lecomplemento">
                     <property name="placeholderText">
                      <string>COMPLEMENTO</string>
                     </property>
                    </widget>
                   </item>
                   <item row="3" column="3">
-                   <widget class="QLineEdit" name="lineEdit_6">
+                   <widget class="QLineEdit" name="lebairro">
                     <property name="placeholderText">
                      <string>BAIRRO</string>
                     </property>
                    </widget>
                   </item>
                   <item row="4" column="0">
-                   <widget class="QLineEdit" name="lineEdit_7">
+                   <widget class="QLineEdit" name="lemunicipio">
                     <property name="placeholderText">
                      <string>MUNICÍPIO</string>
                     </property>
                    </widget>
                   </item>
                   <item row="4" column="1" colspan="2">
-                   <widget class="QLineEdit" name="lineEdit_8">
+                   <widget class="QLineEdit" name="leuf">
                     <property name="placeholderText">
                      <string>UF</string>
                     </property>
                    </widget>
                   </item>
                   <item row="4" column="3">
-                   <widget class="QLineEdit" name="lineEdit_9">
+                   <widget class="QLineEdit" name="lecep">
                     <property name="placeholderText">
                      <string>CEP</string>
                     </property>
                    </widget>
                   </item>
                   <item row="5" column="0" colspan="2">
-                   <widget class="QLineEdit" name="lineEdit_10">
+                   <widget class="QLineEdit" name="letelefone">
                     <property name="placeholderText">
                      <string>TELEFONE</string>
                     </property>
                    </widget>
                   </item>
                   <item row="5" column="2" colspan="2">
-                   <widget class="QLineEdit" name="lineEdit_11">
+                   <widget class="QLineEdit" name="leemail">
                     <property name="placeholderText">
                      <string>EMAIL</string>
                     </property>
                    </widget>
                   </item>
                   <item row="1" column="1" colspan="3">
-                   <widget class="QLineEdit" name="lineEdit_2">
+                   <widget class="QLineEdit" name="lenome">
                     <property name="placeholderText">
                      <string>NOME EMPRESARIAL</string>
                     </property>
