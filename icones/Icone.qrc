@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>toogle.png</file>
+    <file>email.png</file>
+    <file>icon.png</file>
+    <file>instagram.png</file>
+    <file>telefone.png</file>
+  </qresource>
+</RCC>
