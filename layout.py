@@ -36,7 +36,10 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton{\n"
 "background-color:rgb(150,150,150);\n"
-"color:rgb(0,0,0)\n"
+"color:rgb(0,0,0);\n"
+"border-style:solid;\n"
+"border-width:1px;\n"
+"border-color:white;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
@@ -61,8 +64,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.LContainer = QFrame(self.centralwidget)
         self.LContainer.setObjectName(u"LContainer")
-        self.LContainer.setMinimumSize(QSize(150, 0))
-        self.LContainer.setMaximumSize(QSize(200, 16777215))
+        self.LContainer.setMinimumSize(QSize(0, 0))
+        self.LContainer.setMaximumSize(QSize(9, 16777215))
         self.LContainer.setFrameShape(QFrame.StyledPanel)
         self.LContainer.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.LContainer)
@@ -101,10 +104,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.toolBox = QToolBox(self.frame_2)
         self.toolBox.setObjectName(u"toolBox")
-        self.toolBox.setStyleSheet(u"border:none")
+        self.toolBox.setStyleSheet(u"border:none;")
         self.page = QWidget()
         self.page.setObjectName(u"page")
-        self.page.setGeometry(QRect(0, 0, 112, 258))
+        self.page.setGeometry(QRect(0, 0, 100, 258))
+        self.page.setStyleSheet(u"")
         self.verticalLayout_4 = QVBoxLayout(self.page)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.pbhome = QPushButton(self.page)
@@ -134,7 +138,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"Menu")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 112, 258))
+        self.page_2.setGeometry(QRect(0, 0, 100, 258))
         self.verticalLayout_5 = QVBoxLayout(self.page_2)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.label_4 = QLabel(self.page_2)
@@ -174,11 +178,16 @@ class Ui_MainWindow(object):
         self.TopFrame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_2 = QHBoxLayout(self.TopFrame)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.pbtopo = QPushButton(self.TopFrame)
-        self.pbtopo.setObjectName(u"pbtopo")
-        self.pbtopo.setMinimumSize(QSize(0, 40))
-        self.pbtopo.setMaximumSize(QSize(30, 16777215))
-        self.pbtopo.setStyleSheet(u"background-image: url(:/icon/toogle.png);\n"
+        self.pbtoogle = QPushButton(self.TopFrame)
+        self.pbtoogle.setObjectName(u"pbtoogle")
+        sizePolicy = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pbtoogle.sizePolicy().hasHeightForWidth())
+        self.pbtoogle.setSizePolicy(sizePolicy)
+        self.pbtoogle.setMinimumSize(QSize(30, 40))
+        self.pbtoogle.setMaximumSize(QSize(30, 16777215))
+        self.pbtoogle.setStyleSheet(u"background-image: url(:/icon/toogle.png);\n"
 "border-style:solid;\n"
 "border-width:1px;\n"
 "border-color:white;\n"
@@ -186,10 +195,12 @@ class Ui_MainWindow(object):
 "background-color:rgb(255,255,255);\n"
 "}")
 
-        self.horizontalLayout_2.addWidget(self.pbtopo, 0, Qt.AlignLeft)
+        self.horizontalLayout_2.addWidget(self.pbtoogle, 0, Qt.AlignLeft)
 
         self.label = QLabel(self.TopFrame)
         self.label.setObjectName(u"label")
+        self.label.setMinimumSize(QSize(400, 0))
+        self.label.setMaximumSize(QSize(400, 16777215))
         self.label.setFont(font)
         self.label.setStyleSheet(u"border:none")
         self.label.setAlignment(Qt.AlignCenter)
@@ -201,11 +212,11 @@ class Ui_MainWindow(object):
 
         self.MainFrame = QFrame(self.MainContainer)
         self.MainFrame.setObjectName(u"MainFrame")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.MainFrame.sizePolicy().hasHeightForWidth())
-        self.MainFrame.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.MainFrame.sizePolicy().hasHeightForWidth())
+        self.MainFrame.setSizePolicy(sizePolicy1)
         self.MainFrame.setMinimumSize(QSize(410, 0))
         self.MainFrame.setStyleSheet(u"border: 1px;\n"
 "border-style:solid;\n"
@@ -214,9 +225,9 @@ class Ui_MainWindow(object):
         self.MainFrame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.MainFrame)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.SwPages = QStackedWidget(self.MainFrame)
-        self.SwPages.setObjectName(u"SwPages")
-        self.SwPages.setStyleSheet(u"border:none")
+        self.Pages = QStackedWidget(self.MainFrame)
+        self.Pages.setObjectName(u"Pages")
+        self.Pages.setStyleSheet(u"border:none")
         self.Home = QWidget()
         self.Home.setObjectName(u"Home")
         self.verticalLayout_8 = QVBoxLayout(self.Home)
@@ -226,7 +237,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.logo)
 
-        self.SwPages.addWidget(self.Home)
+        self.Pages.addWidget(self.Home)
         self.Cadastrar = QWidget()
         self.Cadastrar.setObjectName(u"Cadastrar")
         self.verticalLayout_9 = QVBoxLayout(self.Cadastrar)
@@ -397,7 +408,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.tabWidget)
 
-        self.SwPages.addWidget(self.Cadastrar)
+        self.Pages.addWidget(self.Cadastrar)
         self.Contatos = QWidget()
         self.Contatos.setObjectName(u"Contatos")
         self.verticalLayout_13 = QVBoxLayout(self.Contatos)
@@ -423,7 +434,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_13.addWidget(self.label_9)
 
-        self.SwPages.addWidget(self.Contatos)
+        self.Pages.addWidget(self.Contatos)
         self.Sobre = QWidget()
         self.Sobre.setObjectName(u"Sobre")
         self.verticalLayout_7 = QVBoxLayout(self.Sobre)
@@ -433,9 +444,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.label_10)
 
-        self.SwPages.addWidget(self.Sobre)
+        self.Pages.addWidget(self.Sobre)
 
-        self.verticalLayout_6.addWidget(self.SwPages)
+        self.verticalLayout_6.addWidget(self.Pages)
 
 
         self.verticalLayout.addWidget(self.MainFrame)
@@ -463,7 +474,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.toolBox.setCurrentIndex(0)
-        self.SwPages.setCurrentIndex(2)
+        self.Pages.setCurrentIndex(1)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -481,7 +492,7 @@ class Ui_MainWindow(object):
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Versao : 1.0.0\n"
 "Autor : HenrIque", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_2), QCoreApplication.translate("MainWindow", u"Info", None))
-        self.pbtopo.setText("")
+        self.pbtoogle.setText("")
         self.label.setText(QCoreApplication.translate("MainWindow", u"SISTEMA DE CADASTRO E CONSULTA", None))
         self.logo.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\":/icon/icon.png\"/></p></body></html>", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Empresas", None))

@@ -23,7 +23,10 @@ border:none;
 
 QPushButton{
 background-color:rgb(150,150,150);
-color:rgb(0,0,0)
+color:rgb(0,0,0);
+border-style:solid;
+border-width:1px;
+border-color:white;
 }
 
 QPushButton:hover{
@@ -49,13 +52,13 @@ color:rgb(0,0,0);
      <widget class="QFrame" name="LContainer">
       <property name="minimumSize">
        <size>
-        <width>150</width>
+        <width>0</width>
         <height>0</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>200</width>
+        <width>9</width>
         <height>16777215</height>
        </size>
       </property>
@@ -125,7 +128,7 @@ border-color: white;</string>
           <item>
            <widget class="QToolBox" name="toolBox">
             <property name="styleSheet">
-             <string notr="true">border:none</string>
+             <string notr="true">border:none;</string>
             </property>
             <property name="currentIndex">
              <number>0</number>
@@ -135,9 +138,12 @@ border-color: white;</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>112</width>
+               <width>100</width>
                <height>258</height>
               </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
              </property>
              <attribute name="label">
               <string>Menu</string>
@@ -191,7 +197,7 @@ border-color: white;</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>112</width>
+               <width>100</width>
                <height>258</height>
               </rect>
              </property>
@@ -253,10 +259,16 @@ color:rgb(0,0,0)
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item alignment="Qt::AlignLeft">
-           <widget class="QPushButton" name="pbtopo">
+           <widget class="QPushButton" name="pbtoogle">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>30</width>
               <height>40</height>
              </size>
             </property>
@@ -282,6 +294,18 @@ background-color:rgb(255,255,255);
           </item>
           <item>
            <widget class="QLabel" name="label">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="font">
              <font>
               <weight>75</weight>
@@ -329,7 +353,7 @@ border-color: white;</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_6">
           <item>
-           <widget class="QStackedWidget" name="SwPages">
+           <widget class="QStackedWidget" name="Pages">
             <property name="styleSheet">
              <string notr="true">border:none</string>
             </property>
