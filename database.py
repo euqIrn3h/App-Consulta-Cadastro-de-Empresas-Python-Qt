@@ -13,6 +13,7 @@ class manutencao():
             self.connection.close()
         except:
             print("Nao foi possivel desconectar")
+
     def ctable(self):
         cursor = self.connection.cursor()
         cursor.execute(f"""CREATE TABLE IF NOT EXISTS Empresa(
@@ -43,7 +44,7 @@ class manutencao():
         except:
             return "erro"
 
-    def tabela(self):
+    def listar(self):
         try:
             cursor = self.connection.cursor()
             cursor.execute("SELECT * FROM Empresa ORDER BY NOME")

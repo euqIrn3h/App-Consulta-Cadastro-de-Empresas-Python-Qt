@@ -358,7 +358,7 @@ border-color: white;</string>
              <string notr="true">border:none</string>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="Home">
              <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -386,7 +386,7 @@ border-color: white;</string>
 </string>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="tab">
                  <attribute name="title">
@@ -437,7 +437,10 @@ border-color: white;</string>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_5">
                      <item>
-                      <widget class="QTableWidget" name="tableWidget">
+                      <widget class="QTableWidget" name="tbl0">
+                       <property name="columnCount">
+                        <number>11</number>
+                       </property>
                        <column>
                         <property name="text">
                          <string>CNPJ</string>
@@ -455,12 +458,12 @@ border-color: white;</string>
                        </column>
                        <column>
                         <property name="text">
-                         <string>COMPLEMENTO</string>
+                         <string>NÚMERO</string>
                         </property>
                        </column>
                        <column>
                         <property name="text">
-                         <string>NÚMERO</string>
+                         <string>COMPLEMENTO</string>
                         </property>
                        </column>
                        <column>
@@ -471,6 +474,16 @@ border-color: white;</string>
                        <column>
                         <property name="text">
                          <string>MUNICÍPIO</string>
+                        </property>
+                       </column>
+                       <column>
+                        <property name="text">
+                         <string>UF</string>
+                        </property>
+                       </column>
+                       <column>
+                        <property name="text">
+                         <string>CEP</string>
                         </property>
                        </column>
                        <column>

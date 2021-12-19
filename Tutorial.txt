@@ -1,5 +1,7 @@
-Para utilizar os arquivos de layout e icones é necessário transformá los
+Para utilizar os arquivos de layout e icones é necessário transformá-los
 em arquivo py antes, para isso é necessário no terminal digitar na pasta dos arquivos os comandos
 
 >pyside6-rcc [arquivo .qrc] [novo arquivo de icones .py]
 >pyside6-uic [arquivo de layout .ui] [novo arquivo de layout .py]
+
+

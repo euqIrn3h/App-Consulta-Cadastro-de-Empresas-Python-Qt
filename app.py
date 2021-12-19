@@ -31,6 +31,10 @@ class mw(QMainWindow,Ui_MainWindow):
 
         #Cadastrar a empresa no nosso banco de dados
         self.pbenviar.clicked.connect(self.cadastrarEmpresa)
+        
+        #Preenchendo a tabela com as empresas cadastradas
+        self.listarEmpresa()
+
 
     def leftMenu(self):
         x = self.LContainer.width()
@@ -97,7 +101,22 @@ class mw(QMainWindow,Ui_MainWindow):
             msg.exec()
             db.close()
 
+    def listarEmpresa(self):
+        db = manutencao()
+        db.connect()   
+        resultado = db.listar()
 
+        self.tbl0.clearContents()
+        self.tbl0.setRowCount((len(resultado)))
+
+        for linha, t in enumerate(resultado):
+            for coluna, d in enumerate(t):
+                self.tbl0.setItem(linha,coluna,QTableWidgetItem(str(d)))
+
+        db.close()
+
+    def alterarCadastro(self):
+        
 
 
 
