@@ -7,6 +7,7 @@ from PySide6.QtGui import QIcon
 import sys
 from api import consulta
 from database import manutencao
+import pandas as pd
 
 
 class mw(QMainWindow,Ui_MainWindow):
@@ -35,6 +36,8 @@ class mw(QMainWindow,Ui_MainWindow):
         #Preenchendo a tabela com as empresas cadastradas
         self.listarEmpresa()
 
+        #Alterando as empresas no Bd com alterações na tabela
+        self.pbalterar.clicked.connect(self.alterarCadastro)
 
     def leftMenu(self):
         x = self.LContainer.width()
@@ -116,8 +119,48 @@ class mw(QMainWindow,Ui_MainWindow):
         db.close()
 
     def alterarCadastro(self):
-        
+        dados =[]
+        dadosnovos=[]
 
+        for linha in range(self.tbl0.rowCount()):
+            for coluna in range(self.tbl0.columnCount()):
+                dados.append(self.tbl0.item(linha,coluna,).text())
+            dadosnovos.append(dados)
+            dados=[]
+
+        db = manutencao()
+        db.connect()
+
+        try:    
+            for empresa in dadosnovos:
+                db.alterar(tuple(empresa))
+            msg = QMessageBox()
+            msg.setWindowTitle("Cadastro alterado")
+            msg.setText("Cadastro alterado com sucesso")
+            msg.exec()
+
+        except:
+            msg = QMessageBox()
+            msg.setWindowTitle("Erro")
+            msg.setText("Cadastro não foi alterado")
+            msg.exec()
+
+        db.close()
+
+    def gerarExcel(self):
+
+        x = []
+        dados = []
+
+        for linha in range(self.tbl0.rowCount()):
+            for coluna in range(self.tbl0.columnCount()):
+                x.append(self.tbl0.item(linha,coluna,).text())
+            dados.append(x)
+            x=[]
+        colunas = ['CNPJ','NOME','LOGRADOURO','NÚMERO','COMPLEMENTO','BAIRRO',
+        'CIDADE','UF','CEP','TELEFONE','EMAIL']
+
+        empresas = 
 
 
 if __name__ == "__main__":

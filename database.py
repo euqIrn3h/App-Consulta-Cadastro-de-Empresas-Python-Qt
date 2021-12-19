@@ -70,12 +70,13 @@ class manutencao():
                 LOGRADOURO = '{fullDataSet[2]}',
                 NUMERO = '{fullDataSet[3]}',
                 COMPLEMENTO = '{fullDataSet[4]}',
-                BAIRRO = {fullDataSet[5]}
+                BAIRRO = '{fullDataSet[5]}',
                 MUNICIPIO = '{fullDataSet[6]}',
                 UF = '{fullDataSet[7]}',
                 CEP = '{fullDataSet[8]}',
                 TELEFONE = '{fullDataSet[9]}',
-                EMAIL = '{fullDataSet[10]}',
+                EMAIL = '{fullDataSet[10]}'
+
                 WHERE CNPJ = '{fullDataSet[0]}'""")
 
         self.connection.commit()
