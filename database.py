@@ -1,7 +1,7 @@
 import sqlite3
 from sqlite3.dbapi2 import Cursor
 
-class manutencao():
+class database():
     def __init__(self, name='system.db') -> None:
         self.name = name
         
@@ -53,14 +53,12 @@ class manutencao():
         except:
             return "Erro"
 
-    def excluir(self):
-        try:
-            cursor = self.connection.cursor()
-            cursor.execute("DELETE FROM Empresa WHERE CNPJ == '{id}'")
-            self.connection.commit()
-            return "Excluida com sucesso"
-        except:
-            "Erro"
+    def excluir(self,id):
+        
+        cursor = self.connection.cursor()
+        cursor.execute(f"""DELETE FROM Empresa WHERE CNPJ == '{id}'""")
+        self.connection.commit()
+        
     
     def alterar(self,fullDataSet):
         cursor = self.connection.cursor()
